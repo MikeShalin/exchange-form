@@ -8,7 +8,7 @@ const App = () => {
   const [step, setStep] = useState(1)
   const onSubmit = (data) => {
     console.log(data)
-    setStep(2)
+    // setStep(2)
   }
   return (
     <>

@@ -9,7 +9,6 @@ export const Result = () => {
   
   useEffect(
     () => {
-      // setWidth(200)
       _.delay(setSecondShow, 3000, true)
       _.delay(setThirdShow, 6000, true)
     }, [],

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { InputElement } from './InputElement'
 import { Fieldset } from './Fieldset'
+import { convertToAmount } from './helpers'
 
 export const Form = ({ onSubmit }) => {
   const [_to, setTo] = useState(['bitcoin', 0])
@@ -15,17 +16,17 @@ export const Form = ({ onSubmit }) => {
     <form style={{ width: 300 }} onSubmit={handleSubmit}>
       <Fieldset
         label='from'
-        // price='0.1'
         name='from'
         id={_from[0]}
-        setData={([id, price]) => setTo([id, price])}
+        setData={([id, price]) => setFrom([id, price])}
       />
       <Fieldset
         label='to'
-        // price='4.6066972'
         name='to'
         id={_to[0]}
-        setData={([id, price]) => setFrom([id, price])}
+        setData={([id, price]) => setTo([id, price])}
+        price={convertToAmount(_to[0], _from[0], _from[1])}
+        disabled
       />
       <fieldset>
         <label>

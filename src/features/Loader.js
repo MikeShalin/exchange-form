@@ -7,7 +7,7 @@ export const Loader = ({ children, step }) => {
   useEffect(
     () => {
       _.delay(showLoader, 3001, false)
-      _.delay(setWidth, 1, 200)
+      setWidth(200)
     }, [],
   )
   
